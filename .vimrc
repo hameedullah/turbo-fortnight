@@ -98,4 +98,8 @@ let g:airline#extensions#tabline#enabled = 1
 
 let g:airline_theme='solarized'
 
+" NERD Tree Tabs key
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+
+
 " vim:set ft=vim et sw=2:
