@@ -83,6 +83,8 @@ let g:UltiSnipsExpandTrigger = '<C-j>'
 let g:UltiSnipsJumpForwardTrigger = '<C-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 
+" leader
+let mapleader = ','
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
 nmap <Leader>sv :so $MYVIMRC<cr>
 
