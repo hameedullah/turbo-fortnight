@@ -25,8 +25,10 @@ Plug 'junegunn/fzf.vim'
 
 " Development
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
-Plug 'gregsexton/gitv'
+  " Faster git log browse
+  Plug 'junegunn/gv.vim'
+  " More functionality, cherry-pick, remove branch, etc
+  Plug 'gregsexton/gitv'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
