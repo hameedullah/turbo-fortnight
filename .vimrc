@@ -25,6 +25,7 @@ Plug 'junegunn/fzf.vim'
 
 " Development
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
