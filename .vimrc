@@ -206,4 +206,13 @@ let g:syntastic_mode_map = {
 let g:neomake_serialize = 1
 let g:neomake_serialize_abort_on_error = 1
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
 " vim:set ft=vim et sw=2:
