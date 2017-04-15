@@ -94,6 +94,45 @@ set confirm
 " Split defaults
 set splitbelow
 
+" Quickly time out on keycodes, but never time out on mappings
+"set notimeout ttimeout ttimeoutlen=200
+" Don't wait 1s when pressing <esc> taken from:
+" http://dominique.pelle.free.fr/.vimrc.html
+set timeout timeoutlen=3000 ttimeoutlen=100
+
+    " Show match, briefly jumps to the matching bracket
+    set showmatch
+
+" Very useful for me
+" Use <F2> to toggle between 'paste' and 'nopaste'
+set pastetoggle=<F2>
+
+        " Better command-line completion
+        set wildmenu
+        set wildmode=list:full
+
+        " Command line completion inteligently
+        " Ignore these filenames during enhanced command line completion.
+        set wildignore+=*.aux,*.out,*.toc " LaTeX intermediate files
+        set wildignore+=*.jpg,*.bmp,*.gif " binary images
+        set wildignore+=*.luac " Lua byte code
+        set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+        set wildignore+=*.pyc " Python byte code
+        set wildignore+=*.spl " compiled spelling word lists
+        set wildignore+=*.sw? " Vim swap files
+
+
+        " Show partial commands in the last line of the screen
+        set showcmd
+
+" Display line numbers on the left
+set number
+set relativenumber
+
+set nofoldenable    " disable folding
+
+        set cursorline  " highlight current line
+
 " Colors and Themes
 set background=dark         " Assume a dark background
 colorscheme solarized
@@ -115,6 +154,24 @@ function! ToggleBG()
     endif
 endfunction
 noremap <leader>bg :call ToggleBG()<CR>
+
+    " Global Indentation Settings {
+        " Indentation settings for using 4 spaces instead of tabs.
+        " Do not change 'tabstop' from its default value of 8 with this setup.
+        set shiftwidth=4
+        set softtabstop=4
+        set expandtab
+
+        " When using < and > shift to round
+        " it defaults to shifting to multiple of shiftwidth
+        set shiftround
+    " This mapping allows to stay in visual mode when indenting with < and >
+    " Its very annoying that on every indent outdent we lose visual mode
+    vnoremap > >gv
+    vnoremap < <gv
+
+    " For when you forget to sudo.. Really Write the file.
+    cmap w!! w !sudo tee % >/dev/null
 
 " UltiSnips triggering
 let g:UltiSnipsExpandTrigger = '<C-j>'
