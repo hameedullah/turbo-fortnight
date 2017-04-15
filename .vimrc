@@ -5,6 +5,12 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 
+" Theme and display plugins
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 
@@ -87,6 +93,13 @@ set splitbelow
 
 " Colors and Themes
 set background=dark         " Assume a dark background
+colorscheme solarized
+let g:solarized_termtrans = 1
+
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='solarized'
 
 " Allow to trigger background
 function! ToggleBG()
