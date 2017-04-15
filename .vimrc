@@ -56,6 +56,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
 Plug 'w0rp/ale'
+Plug 'rodjek/vim-puppet'
 
 call plug#end()
 
