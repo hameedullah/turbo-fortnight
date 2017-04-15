@@ -20,15 +20,16 @@ Plug 'jistr/vim-nerdtree-tabs', { 'on': '<Plug>NERDTreeTabsToggle' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Trying FZF as an alternative to CtrlP
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all', 'on': ['FZF', 'Files', 'Buffers', 'History', 'Commits'] }
+Plug 'junegunn/fzf.vim', {'on': ['FZF', 'Files', 'Buffers', 'History', 'Commits'] }
+
 
 " Development
 Plug 'tpope/vim-fugitive'
   " Faster git log browse
   Plug 'junegunn/gv.vim'
   " More functionality, cherry-pick, remove branch, etc
-  Plug 'gregsexton/gitv'
+  Plug 'gregsexton/gitv', {'on': ['Gitv'] }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
