@@ -12,9 +12,9 @@ Plug 'junegunn/vim-easy-align'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " NERDTree Plugins
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
-Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on':  '<Plug>NERDTreeTabsToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': '<Plug>NERDTreeTabsToggle' }
+Plug 'jistr/vim-nerdtree-tabs', { 'on': '<Plug>NERDTreeTabsToggle' }
 
 " You Complete Me with install
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
@@ -99,7 +99,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='solarized'
 
 " NERD Tree Tabs key
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
+map <Leader>n <Plug>NERDTreeTabsToggle<CR>
 
 
 " vim:set ft=vim et sw=2:
