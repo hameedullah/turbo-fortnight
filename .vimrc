@@ -15,6 +15,17 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree', { 'on':  '<Plug>NERDTreeTabsToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': '<Plug>NERDTreeTabsToggle' }
 Plug 'jistr/vim-nerdtree-tabs', { 'on': '<Plug>NERDTreeTabsToggle' }
+augroup nerd_loader
+  autocmd!
+  autocmd VimEnter * silent! autocmd! FileExplorer
+  autocmd BufEnter,BufNew *
+        \  if isdirectory(expand('<amatch>'))
+        \|   call plug#load('nerdtree')
+        \|   call plug#load('nerdtree-git-plugin')
+        \|   call plug#load('vim-nerdtree-tabs')
+        \|   execute 'autocmd! nerd_loader'
+        \| endif
+augroup END
 
 " You Complete Me with install
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
@@ -66,6 +77,9 @@ set smarttab
 " Instead of failing a command because of unsaved changes, instead raise a
 " dialogue asking if you wish to save changed files.
 set confirm
+
+" Split defaults
+set splitbelow
 
 " Colors and Themes
 set background=dark         " Assume a dark background
