@@ -55,8 +55,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
-Plug 'vim-syntastic/syntastic'
-Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -193,26 +192,12 @@ let g:airline_theme='solarized'
 " NERD Tree Tabs key
 map <Leader>n <Plug>NERDTreeTabsToggle<CR>
 
-" Taken from: https://robots.thoughtbot.com/my-life-with-neovim
-" Run NeoMake on read and write operations
-autocmd! BufReadPost,BufWritePost * Neomake
 
-" Disable inherited syntastic
-let g:syntastic_mode_map = {
-  \ "mode": "passive",
-  \ "active_filetypes": [],
-  \ "passive_filetypes": [] }
+"ALE configuration
+" Write this in your vimrc file
+let g:ale_lint_on_save = 1
+"let g:ale_lint_delay = 1000
+"let g:ale_lint_on_text_changed = 0
 
-let g:neomake_serialize = 1
-let g:neomake_serialize_abort_on_error = 1
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
 
 " vim:set ft=vim et sw=2:
