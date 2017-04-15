@@ -16,6 +16,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Indent guides
+Plug 'nathanaelkane/vim-indent-guides'
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
@@ -206,5 +208,11 @@ let g:ale_lint_on_save = 1
 "let g:ale_lint_delay = 1000
 "let g:ale_lint_on_text_changed = 0
 
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=green   ctermbg=23
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=10
 
 " vim:set ft=vim et sw=2:
