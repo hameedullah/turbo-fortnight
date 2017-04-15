@@ -9,7 +9,14 @@ Plug 'tpope/vim-sensible'
 Plug 'junegunn/vim-easy-align'
 
 " Multiple Plug commands can be written in a single line using | separators
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips', {'on': []} | Plug 'honza/vim-snippets'
+" You Complete Me with install
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py', 'on':[] }
+augroup load_us_ycm
+  autocmd!
+  autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe')
+                     \| call youcompleteme#Enable() | autocmd! load_us_ycm
+augroup END
 
 " NERDTree Plugins
 Plug 'scrooloose/nerdtree', { 'on':  '<Plug>NERDTreeTabsToggle' }
@@ -26,9 +33,6 @@ augroup nerd_loader
         \|   execute 'autocmd! nerd_loader'
         \| endif
 augroup END
-
-" You Complete Me with install
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Trying FZF as an alternative to CtrlP
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all', 'on': ['FZF', 'Files', 'Buffers', 'History', 'Commits'] }
