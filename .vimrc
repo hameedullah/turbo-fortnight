@@ -52,8 +52,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
-Plug 'w0rp/ale'
-Plug 'rodjek/vim-puppet'
+Plug 'w0rp/ale', {'for': ['vim','python','php','puppet','yaml','js','css','html','json']}
+Plug 'rodjek/vim-puppet', {'for': 'puppet'}
 
 call plug#end()
 
