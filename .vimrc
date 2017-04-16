@@ -142,6 +142,10 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='solarized'
 
+"let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+let g:airline_secriont_error +=%{ConflictedVersion()}
+
+
 " Allow to trigger background
 function! ToggleBG()
     let s:tbg = &background
@@ -183,11 +187,7 @@ nmap <Leader>ev :tabedit $MYVIMRC<cr>
 nmap <Leader>sv :so $MYVIMRC<cr>
 
 
-set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
 
-let g:airline_theme='solarized'
 
 " NERD Tree Tabs key
 map <Leader>n <Plug>NERDTreeTabsToggle<CR>
@@ -247,5 +247,11 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=green   ctermbg=23
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=10
+
+let g:conflict_marker_enable_mappings = 0
+nmap <buffer>crt <Plug>(conflict-marker-themselves)
+nmap <buffer>cro <Plug>(conflict-marker-ourselves)
+nmap <buffer>crn <Plug>(conflict-marker-none)
+nmap <buffer>crb <Plug>(conflict-marker-both)
 
 " vim:set ft=vim et sw=2:
