@@ -53,6 +53,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
 Plug 'rhysd/conflict-marker.vim'
+Plug 'christoomey/vim-conflicted'
 Plug 'w0rp/ale', {'for': ['vim','python','php','puppet','yaml','js','css','html','json']}
 Plug 'rodjek/vim-puppet', {'for': 'puppet'}
 
