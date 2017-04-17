@@ -6,7 +6,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-
 " Directory path for plugins
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
@@ -53,7 +52,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
 Plug 'rhysd/conflict-marker.vim'
-Plug 'christoomey/vim-conflicted'
+Plug 'idanarye/vim-merginal'
 Plug 'w0rp/ale', {'for': ['vim','python','php','puppet','yaml','js','css','html','json']}
 Plug 'rodjek/vim-puppet', {'for': 'puppet'}
 
@@ -143,7 +142,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='solarized'
 
 "let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
-let g:airline_secriont_error +=%{ConflictedVersion()}
 
 
 " Allow to trigger background
@@ -248,6 +246,7 @@ let g:indent_guides_guide_size = 1
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=green   ctermbg=23
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=10
 
+" custom mapping for conflict marker
 let g:conflict_marker_enable_mappings = 0
 nmap <buffer>crt <Plug>(conflict-marker-themselves)
 nmap <buffer>cro <Plug>(conflict-marker-ourselves)
