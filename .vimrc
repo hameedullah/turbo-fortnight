@@ -37,8 +37,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': '<Plug>NERDTreeTabsToggle' }
 Plug 'jistr/vim-nerdtree-tabs', { 'on': '<Plug>NERDTreeTabsToggle' }
 
 " Trying FZF as an alternative to CtrlP
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all', 'on': ['FZF', 'Files', 'Buffers', 'History', 'Commits'] }
-Plug 'junegunn/fzf.vim', {'on': ['FZF', 'Files', 'Buffers', 'History', 'Commits'] }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 
 " Development
@@ -253,4 +253,6 @@ nmap <buffer>cro <Plug>(conflict-marker-ourselves)
 nmap <buffer>crn <Plug>(conflict-marker-none)
 nmap <buffer>crb <Plug>(conflict-marker-both)
 
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 " vim:set ft=vim et sw=2:
