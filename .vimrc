@@ -41,8 +41,11 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 
+
 " Development
 Plug 'tpope/vim-fugitive'
+  " Github extension for fugitive, enables Gbrowse
+  Plug 'tpope/vim-rhubarb'
   " Faster git log browse
   Plug 'junegunn/gv.vim'
   " More functionality, cherry-pick, remove branch, etc
