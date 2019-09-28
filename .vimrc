@@ -58,6 +58,11 @@ Plug 'rhysd/conflict-marker.vim'
 Plug 'idanarye/vim-merginal'
 Plug 'w0rp/ale', {'for': ['vim','python','php','puppet','yaml','js','css','html','json']}
 Plug 'rodjek/vim-puppet', {'for': 'puppet'}
+Plug 'scrooloose/nerdcommenter'
+Plug 'chase/vim-ansible-yaml'
+
+
+Plug 'vim-vdebug/vdebug'
 
 call plug#end()
 
@@ -187,7 +192,9 @@ let mapleader = ','
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
 nmap <Leader>sv :so $MYVIMRC<cr>
 
-
+" Enable vim Modelines
+set modeline
+set modelines=5
 
 
 " NERD Tree Tabs key
@@ -258,4 +265,6 @@ nmap <buffer>crb <Plug>(conflict-marker-both)
 
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+
 " vim:set ft=vim et sw=2:
